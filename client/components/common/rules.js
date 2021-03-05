@@ -4,7 +4,7 @@ const Rules = () => {
   return (
     <div>
       <div className="py-10 px-5 mt-10">
-        <ol className="list-decimal text-lg leading-loose">
+        <ol className="list-decimal text-lg leading-loose text-black text-opacity-75">
           <p className="text-3xl text-center pr-10 underline pb-2">Game rules</p>
           <li>Choose number of vertical and horizontal lines</li>
           <li>
