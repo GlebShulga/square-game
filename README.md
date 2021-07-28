@@ -1,12 +1,6 @@
 This project was made with [Create React App](https://github.com/facebook/create-react-app), using [Redux](https://redux.js.org/).
 
-## Key Features
-
-- Fully Responsive
-- 2 types of sorting
-- Currency changing
-- Adding and removing items from cart
-- Checkout using stripe API
+## Square game
 
 ## How to quickly try it?
 
