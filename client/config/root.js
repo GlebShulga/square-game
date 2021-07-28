@@ -7,7 +7,7 @@ import { Switch, Route, Redirect, StaticRouter } from 'react-router-dom'
 
 import store, { history } from '../redux'
 
-import Square from '../components/common/square'
+import Square from '../components/common/Square'
 import MainPage from '../components/Main-page'
 import NotFound from '../components/404'
 

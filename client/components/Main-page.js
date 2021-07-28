@@ -1,6 +1,6 @@
 import React from 'react'
 import CreateSquare from './common/CreateSquare'
-import Rules from './common/rules'
+import Rules from './common/Rules'
 import Head from './Head'
 
 const MainPage = () => {
@@ -20,7 +20,5 @@ const MainPage = () => {
     </div>
   )
 }
-
-MainPage.propTypes = {}
 
 export default React.memo(MainPage)

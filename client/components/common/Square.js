@@ -44,7 +44,7 @@ const Square = () => {
                 type="button"
                 aria-label="Select square"
                 className={`w-20 h-20 ${color} my-5`}
-                key={index && it}
+                key={color && index}
                 onClick={() => dispatch(changeGreen())}
                 disabled={activeIndex !== index}
               />
@@ -60,7 +60,5 @@ const Square = () => {
     </div>
   )
 }
-
-Square.propTypes = {}
 
 export default React.memo(Square)

@@ -20,6 +20,4 @@ const Rules = () => {
   )
 }
 
-Rules.propTypes = {}
-
 export default React.memo(Rules)

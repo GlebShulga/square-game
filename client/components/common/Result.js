@@ -31,6 +31,4 @@ const Result = () => {
   )
 }
 
-Result.propTypes = {}
-
 export default React.memo(Result)
