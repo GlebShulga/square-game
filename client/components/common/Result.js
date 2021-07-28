@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import Head from '../head'
+import Head from '../Head'
 import { gameResultToNull } from '../../redux/reducers/createSquare'
 
 const Result = () => {

@@ -1,6 +1,21 @@
 /* purgecss start ignore */
 @tailwind  base;
 @tailwind  components;
+@tailwind utilities;
+
+@layer components {
+  .inputClassName {
+    @apply border-solid border-gray-400 border-2 p-3 md:text-xl w-full text-black
+  }
+  .classNameToggle {
+    @apply block w-10 h-6 bg-gray-400 rounded-full shadow-inner
+  }
+  .classNameToggleUnchecked {
+    @apply absolute block w-4 h-4 mt-1 ml-1 bg-white rounded-full shadow inset-y-0 left-0 focus-within:outline-none transition-transform duration-300 ease-in-out
+  }
+  .classNameToggleChecked {
+    @apply absolute block w-4 h-4 mt-1 ml-1 rounded-full shadow inset-y-0 left-0 focus-within:outline-none transition-transform duration-300 ease-in-out bg-red-500 transform translate-x-full
+  }
+}
 /* purgecss end ignore */
 
-@tailwind utilities;

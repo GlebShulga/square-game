@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { randomSquare, changeGreen } from '../../redux/reducers/createSquare'
-import Result from './result'
+import Result from './Result'
 
-import Head from '../head'
+import Head from '../Head'
 import { YELLOW_SQUARE, GREEN_SQUARE, RED_SQUARE } from '../../constants/constants'
 
 const Square = () => {
@@ -42,8 +42,9 @@ const Square = () => {
             return (
               <button
                 type="button"
+                aria-label="Select square"
                 className={`w-20 h-20 ${color} my-5`}
-                key={index}
+                key={index && it}
                 onClick={() => dispatch(changeGreen())}
                 disabled={activeIndex !== index}
               />

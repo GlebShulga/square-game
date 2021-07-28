@@ -1,7 +1,7 @@
 import React from 'react'
-import CreateSquare from './common/createSquare'
+import CreateSquare from './common/CreateSquare'
 import Rules from './common/rules'
-import Head from './head'
+import Head from './Head'
 
 const MainPage = () => {
   return (
