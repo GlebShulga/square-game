@@ -22,6 +22,7 @@ const config = {
     minimizer: [
       new TerserJSPlugin({ parallel: true }),
       new OptimizeCSSAssetsPlugin({
+        assetNameRegExp: /\.optimize\.css$/g,
         cssProcessor: require('cssnano'),
         cssProcessorPluginOptions: {
           preset: ['default', { discardComments: { removeAll: true } }]
