@@ -3,6 +3,9 @@
     "version": "1.0.2",
     "description": "Square Game",
     "main": "index.js",
+    "engines": {
+      "node": "14.x"
+    },
     "scripts": {
         "docker-start-dev": "docker-compose -f \"docker\\DEV.docker-compose.yml\" up",
         "docker-stop-dev": "docker-compose -f \"docker\\DEV.docker-compose.yml\" down",
@@ -93,7 +96,6 @@
         "history": "^4.10.1",
         "prop-types": "^15.7.2",
         "react": "^17.0.1",
-        "react-beforeunload": "^2.4.0",
         "react-dom": "^17.0.1",
         "react-helmet": "^6.1.0",
         "react-hot-loader": "^4.13.0",
@@ -175,7 +177,9 @@
     },
     "nodemonConfig": {
         "ignore": [
-            "*.hot-update.json"
+            "*.hot-update.json",
+            "client",
+            "server/data/*.*"
         ]
     },
     "husky": {
