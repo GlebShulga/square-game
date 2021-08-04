@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ['./client/**/*.html', './client/**/*.jsx', './client/**/*.js'],
+  purge: [false],
   theme: {},
   variants: {},
   plugins: []
