@@ -10,10 +10,8 @@ const CreateSquare = () => {
   const hardMode = useSelector((s) => s.create.hardMode)
 
   const [error, setError] = useState(false)
-  console.log(error, 'error')
 
   const onChangeHorizontal = (e) => {
-    console.log(e.target.value, 'e.target.value')
     if (e.target.value > 1 || e.target.value < 9) {
       setError(false)
       dispatch(createSquare(e.target.value, 'rows'))
