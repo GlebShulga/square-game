@@ -11,7 +11,7 @@ const CreateSquare = () => {
     <div>
       <Head title="Square Game" />
       <div className="grid gap-4">
-        <div className="col-span-2 lg:col-span-1">
+        <div className="col-span-2 md:col-span-1">
           <input
             className="inputClassName"
             type="number"
@@ -21,7 +21,7 @@ const CreateSquare = () => {
             onChange={(e) => dispatch(createSquare(e.target.value, 'rows'))}
           />
         </div>
-        <div className="col-span-2 lg:col-span-1">
+        <div className="col-span-2 md:col-span-1">
           <input
             className="inputClassName"
             type="number"
@@ -46,8 +46,8 @@ const CreateSquare = () => {
       <div className="flex flex-col">
         <label htmlFor="toggleHardMode" className="mt-3 inline-flex items-center cursor-pointer">
           <span className="relative">
-            <span className="classNameToggle" />
-            <span className={hardMode ? 'classNameToggleChecked' : 'classNameToggleUnchecked'}>
+            <span className="nameToggle" />
+            <span className={hardMode ? 'nameToggleChecked' : 'nameToggleUnchecked'}>
               <input
                 id="toggleHardMode"
                 type="checkbox"
