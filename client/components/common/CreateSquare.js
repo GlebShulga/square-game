@@ -1,12 +1,45 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Head from '../Head'
 import { createSquare, generate } from '../../redux/reducers/createSquare'
 
 const CreateSquare = () => {
   const dispatch = useDispatch()
+  const history = useHistory()
   const hardMode = useSelector((s) => s.create.hardMode)
+
+  const [error, setError] = useState(false)
+  console.log(error, 'error')
+
+  const onChangeHorizontal = (e) => {
+    console.log(e.target.value, 'e.target.value')
+    if (e.target.value > 1 || e.target.value < 9) {
+      setError(false)
+      dispatch(createSquare(e.target.value, 'rows'))
+    }
+    if (e.target.value < 2 || e.target.value > 8) {
+      setError(true)
+    }
+  }
+
+  const onChangeVertical = (e) => {
+    if (e.target.value > 1 || e.target.value < 9) {
+      setError(false)
+      dispatch(createSquare(e.target.value, 'cols'))
+    }
+    if (e.target.value < 2 || e.target.value > 8) {
+      setError(true)
+    }
+  }
+
+  const onClickStart = () => {
+    if (!error) {
+      dispatch(generate())
+      history.push('/square')
+    }
+  }
+
   return (
     <div>
       <Head title="Square Game" />
@@ -15,33 +48,38 @@ const CreateSquare = () => {
           <input
             className="inputClassName"
             type="number"
-            min="0"
+            min="2"
             max="8"
             placeholder="Write number of horizontal lines"
-            onChange={(e) => dispatch(createSquare(e.target.value, 'rows'))}
+            onChange={onChangeHorizontal}
           />
         </div>
         <div className="col-span-2 md:col-span-1">
           <input
             className="inputClassName"
             type="number"
-            min="0"
+            min="2"
             max="8"
             placeholder="Write number of vertical lines"
-            onChange={(e) => dispatch(createSquare(e.target.value, 'cols'))}
+            onChange={onChangeVertical}
           />
         </div>
       </div>
+      {error && (
+        <div>
+          <div className="text-red-500 font-semibold flex justify-center text-lg pt-1">
+            The number of lines can be from 2 to 8.
+          </div>
+        </div>
+      )}
       <div className="mt-4 grid justify-items-center">
-        <Link to="/square">
-          <button
-            type="button"
-            className="border rounded bg-teal-300 py-1 px-2 hover:text-red-200"
-            onClick={() => dispatch(generate())}
-          >
-            Start
-          </button>
-        </Link>
+        <button
+          type="button"
+          className="border rounded bg-teal-300 py-1 px-2 hover:text-red-200"
+          onClick={onClickStart}
+        >
+          Start
+        </button>
       </div>
       <div className="flex flex-col">
         <label htmlFor="toggleHardMode" className="mt-3 inline-flex items-center cursor-pointer">
