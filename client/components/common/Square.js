@@ -26,9 +26,9 @@ const Square = () => {
   return (
     <div>
       <Head title="Game" />
-      <div className="mx-auto my-10 md:my-5 flex flex-wrap justify-center items-center">
+      <div className="mx-auto my-10 md:my-5 flex flex-wrap justify-center">
         <div
-          className={`grid grid-rows-${rowsNumber} grid-cols-${colsNumber} gap-5 md:gap-10`}
+          className={`grid grid-rows-${rowsNumber} grid-cols-${colsNumber} gap-4 md:gap-10`}
           id="square"
         >
           {generatedSquare.map((it, index) => {
@@ -46,7 +46,7 @@ const Square = () => {
               <button
                 type="button"
                 aria-label="Select square"
-                className={`md:w-20 md:h-20 w-10 h-10 ${color} md:my-5 my-2`}
+                className={`md:w-20 md:h-20 w-10 h-10 ${color}`}
                 key={color && index}
                 onClick={() => dispatch(changeGreen())}
                 disabled={activeIndex !== index}
