@@ -1,4 +1,4 @@
-This project was made with [Create React App](https://github.com/facebook/create-react-app), using [Redux](https://redux.js.org/).
+This project was made with [React Boilerplate](https://github.com/ovasylenko/skillcrucial-react-redux-boilerplate), using [Redux](https://redux.js.org/).
 
 ## Square game
 
