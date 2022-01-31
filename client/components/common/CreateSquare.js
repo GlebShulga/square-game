@@ -7,26 +7,43 @@ import { createSquare, generate } from '../../redux/reducers/createSquare'
 const CreateSquare = () => {
   const dispatch = useDispatch()
   const history = useHistory()
-  const hardMode = useSelector((s) => s.create.hardMode)
+  const isHardMode = useSelector((s) => s.create.isHardMode)
 
   const [error, setError] = useState(false)
 
+  const NUMBERS = {
+    ZERO: 0,
+    ONE: 1,
+    TWO: 2,
+    THREE: 3,
+    FOUR: 4,
+    FIVE: 5,
+    SIX: 6,
+    SEVEN: 7,
+    EIGHT: 8,
+    NINE: 9
+  }
+
+  const ROWS = 'rows'
+  const COLS = 'cols'
+  const HARDMODE = 'isHardMode'
+
   const onChangeHorizontal = (e) => {
-    if (e.target.value > 1 || e.target.value < 9) {
+    if (e.target.value > NUMBERS.ONE || e.target.value < NUMBERS.NINE) {
       setError(false)
-      dispatch(createSquare(e.target.value, 'rows'))
+      dispatch(createSquare(e.target.value, ROWS))
     }
-    if (e.target.value < 2 || e.target.value > 8) {
+    if (e.target.value < NUMBERS.TWO || e.target.value > NUMBERS.EIGHT) {
       setError(true)
     }
   }
 
   const onChangeVertical = (e) => {
-    if (e.target.value > 1 || e.target.value < 9) {
+    if (e.target.value > NUMBERS.ONE || e.target.value < NUMBERS.NINE) {
       setError(false)
-      dispatch(createSquare(e.target.value, 'cols'))
+      dispatch(createSquare(e.target.value, COLS))
     }
-    if (e.target.value < 2 || e.target.value > 8) {
+    if (e.target.value < NUMBERS.TWO || e.target.value > NUMBERS.EIGHT) {
       setError(true)
     }
   }
@@ -46,8 +63,8 @@ const CreateSquare = () => {
           <input
             className="inputClassName"
             type="number"
-            min="2"
-            max="8"
+            min={NUMBERS.TWO}
+            max={NUMBERS.EIGHT}
             placeholder="Write number of horizontal lines"
             onChange={onChangeHorizontal}
           />
@@ -56,8 +73,8 @@ const CreateSquare = () => {
           <input
             className="inputClassName"
             type="number"
-            min="2"
-            max="8"
+            min={NUMBERS.TWO}
+            max={NUMBERS.EIGHT}
             placeholder="Write number of vertical lines"
             onChange={onChangeVertical}
           />
@@ -83,13 +100,13 @@ const CreateSquare = () => {
         <label htmlFor="toggleHardMode" className="mt-3 inline-flex items-center cursor-pointer">
           <span className="relative">
             <span className="nameToggle" />
-            <span className={hardMode ? 'nameToggleChecked' : 'nameToggleUnchecked'}>
+            <span className={isHardMode ? 'nameToggleChecked' : 'nameToggleUnchecked'}>
               <input
                 id="toggleHardMode"
                 type="checkbox"
                 className="absolute opacity-0 w-0 h-0"
-                onChange={() => dispatch(createSquare(!hardMode, 'hardMode'))}
-                value={hardMode}
+                onChange={() => dispatch(createSquare(!isHardMode, HARDMODE))}
+                value={isHardMode}
               />
             </span>
           </span>
@@ -100,4 +117,4 @@ const CreateSquare = () => {
   )
 }
 
-export default React.memo(CreateSquare)
+export default CreateSquare

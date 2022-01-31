@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 const Rules = () => {
-  const hardMode = useSelector((s) => s.create.hardMode)
+  const isHardMode = useSelector((s) => s.create.isHardMode)
 
   return (
     <div>
@@ -15,10 +15,10 @@ const Rules = () => {
           </li>
           <li>Click on the square when it turnes yellow</li>
           <li>If you managed to click on the square during 1 sec, it turnes green</li>
-          {hardMode && (
+          {isHardMode && (
             <li>
-              On hit, the time to hit the next one decreases by 5 percent, and if he misses by 5
-              percent, the time increases.
+              On hit, the time to hit the next one decreases by 5 percent, and f it misses, the time
+              increases by 5 percent.
             </li>
           )}
           <li>Click untill half of the squares on the field turnes green</li>

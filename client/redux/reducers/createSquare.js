@@ -25,7 +25,7 @@ const initialState = {
   activeIndex: null,
   activeTimer: null,
   gameResult: null,
-  hardMode: false,
+  isHardMode: false,
   timeoutValue: 1000,
   countObj: { green: 0, red: 0 }
 }
@@ -93,8 +93,11 @@ export default (state = initialState, action) => {
 }
 
 export function createSquare(number, axis) {
+  const ROWS = 'rows'
+  const COLS = 'cols'
+  const HARDMODE = 'isHardMode'
   return (dispatch) => {
-    if (axis === 'cols' || axis === 'rows' || axis === 'hardMode') {
+    if (axis === COLS || axis === ROWS || axis === HARDMODE) {
       dispatch({ type: CREATE_SQUARE, axis, number })
     }
   }
@@ -121,10 +124,10 @@ function changeValue(arr, index, newValue) {
 export function changeRed() {
   return (dispatch, getState) => {
     const store = getState()
-    const { list, hardMode, timeoutValue } = store.create
+    const { list, isHardMode, timeoutValue } = store.create
     const { activeIndex } = store.create
     const newArrayRed = changeValue(list, activeIndex, RED_SQUARE)
-    if (hardMode) {
+    if (isHardMode) {
       const hardModeTimer = timeoutValue * INC_TIMER
       dispatch({ type: UPDATE_TIMEOUT_VALUE, hardModeTimer })
     }
@@ -134,6 +137,8 @@ export function changeRed() {
 }
 
 export function randomSquare() {
+  const LOSE = 'Lose'
+  const WIN = 'Win'
   return (dispatch, getState) => {
     const store = getState()
     const { activeTimer, list, timeoutValue } = store.create
@@ -147,12 +152,12 @@ export function randomSquare() {
       return rec === GREEN_SQUARE ? acc + 1 : acc
     }, 0)
     if (redCount >= list.length / 2) {
-      dispatch({ type: SET_GAME_RESULT, gameResult: 'Lose' })
+      dispatch({ type: SET_GAME_RESULT, gameResult: LOSE })
       clearTimeout(activeTimer)
       return
     }
     if (greenCount >= list.length / 2) {
-      dispatch({ type: SET_GAME_RESULT, gameResult: 'Win' })
+      dispatch({ type: SET_GAME_RESULT, gameResult: WIN })
       clearTimeout(activeTimer)
       return
     }
@@ -174,9 +179,9 @@ export function randomSquare() {
 export function changeGreen() {
   return (dispatch, getState) => {
     const store = getState()
-    const { activeIndex, activeTimer, list, hardMode, timeoutValue } = store.create
+    const { activeIndex, activeTimer, list, isHardMode, timeoutValue } = store.create
     const newArrayGreen = changeValue(list, activeIndex, GREEN_SQUARE)
-    if (hardMode) {
+    if (isHardMode) {
       const hardModeTimer = timeoutValue * DEC_TIMER
       dispatch({ type: UPDATE_TIMEOUT_VALUE, hardModeTimer })
     }
