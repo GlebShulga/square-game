@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Head from '../Head'
+import NUMBERS from './constants'
 import { createSquare, generate } from '../../redux/reducers/createSquare'
 
 const CreateSquare = () => {
@@ -10,19 +11,6 @@ const CreateSquare = () => {
   const isHardMode = useSelector((s) => s.create.isHardMode)
 
   const [error, setError] = useState(false)
-
-  const NUMBERS = {
-    ZERO: 0,
-    ONE: 1,
-    TWO: 2,
-    THREE: 3,
-    FOUR: 4,
-    FIVE: 5,
-    SIX: 6,
-    SEVEN: 7,
-    EIGHT: 8,
-    NINE: 9
-  }
 
   const ROWS = 'rows'
   const COLS = 'cols'
