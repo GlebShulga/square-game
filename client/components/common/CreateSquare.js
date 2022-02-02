@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Head from '../Head'
-import NUMBERS from './constants'
+import { NUMBERS, ROWS, COLS, HARDMODE } from '../../constants/constants'
 import { createSquare, generate } from '../../redux/reducers/createSquare'
 
 const CreateSquare = () => {
@@ -11,10 +11,6 @@ const CreateSquare = () => {
   const isHardMode = useSelector((s) => s.create.isHardMode)
 
   const [error, setError] = useState(false)
-
-  const ROWS = 'rows'
-  const COLS = 'cols'
-  const HARDMODE = 'isHardMode'
 
   const onChangeHorizontal = (e) => {
     if (e.target.value > NUMBERS.ONE || e.target.value < NUMBERS.NINE) {

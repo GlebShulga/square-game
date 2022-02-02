@@ -5,7 +5,12 @@ import {
   GREEN_SQUARE,
   RED_SQUARE,
   INC_TIMER,
-  DEC_TIMER
+  DEC_TIMER,
+  ROWS,
+  COLS,
+  HARDMODE,
+  WIN,
+  LOSE
 } from '../../constants/constants'
 
 const CREATE_SQUARE = 'CREATE_SQUARE'
@@ -93,9 +98,6 @@ export default (state = initialState, action) => {
 }
 
 export function createSquare(number, axis) {
-  const ROWS = 'rows'
-  const COLS = 'cols'
-  const HARDMODE = 'isHardMode'
   return (dispatch) => {
     if (axis === COLS || axis === ROWS || axis === HARDMODE) {
       dispatch({ type: CREATE_SQUARE, axis, number })
@@ -137,8 +139,6 @@ export function changeRed() {
 }
 
 export function randomSquare() {
-  const LOSE = 'Lose'
-  const WIN = 'Win'
   return (dispatch, getState) => {
     const store = getState()
     const { activeTimer, list, timeoutValue } = store.create

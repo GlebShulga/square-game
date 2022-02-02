@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Head from '../Head'
-import NUMBERS from './constants'
+import { NUMBERS, WIN } from '../../constants/constants'
 import { gameResultToNull } from '../../redux/reducers/createSquare'
 
 const Result = () => {
   const { gameResult, countObj } = useSelector((s) => s.create)
   const dispatch = useDispatch()
-  const WIN = 'Win'
+
   return (
     <div>
       <Head title="Result" />
