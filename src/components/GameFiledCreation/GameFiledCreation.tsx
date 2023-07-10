@@ -52,7 +52,7 @@ export const GameFiledCreation = () => {
             type="number"
             min={NUMBERS.TWO}
             max={NUMBERS.FIVE}
-            placeholder="Write number of horizontal lines"
+            placeholder="Choose the number of rows"
             onChange={onChangeHorizontal}
           />
         </div>
@@ -62,7 +62,7 @@ export const GameFiledCreation = () => {
             type="number"
             min={NUMBERS.TWO}
             max={NUMBERS.FIVE}
-            placeholder="Write number of vertical lines"
+            placeholder="Choose the number of columns"
             onChange={onChangeVertical}
           />
         </div>
