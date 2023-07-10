@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.31c6a55f.css",
-    "main.js": "/static/js/main.d8219d1a.js",
-    "static/js/787.30070e74.chunk.js": "/static/js/787.30070e74.chunk.js",
-    "static/media/bg.jpg": "/static/media/bg.ea4a5809de89c3962837.jpg",
-    "index.html": "/index.html",
-    "main.31c6a55f.css.map": "/static/css/main.31c6a55f.css.map",
-    "main.d8219d1a.js.map": "/static/js/main.d8219d1a.js.map",
-    "787.30070e74.chunk.js.map": "/static/js/787.30070e74.chunk.js.map"
+    "main.css": "/square-game/static/css/main.ddb536b1.css",
+    "main.js": "/square-game/static/js/main.b90d5852.js",
+    "static/js/787.30070e74.chunk.js": "/square-game/static/js/787.30070e74.chunk.js",
+    "static/media/bg.jpg": "/square-game/static/media/bg.ea4a5809de89c3962837.jpg",
+    "index.html": "/square-game/index.html",
+    "main.ddb536b1.css.map": "/square-game/static/css/main.ddb536b1.css.map",
+    "main.b90d5852.js.map": "/square-game/static/js/main.b90d5852.js.map",
+    "787.30070e74.chunk.js.map": "/square-game/static/js/787.30070e74.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31c6a55f.css",
-    "static/js/main.d8219d1a.js"
+    "static/css/main.ddb536b1.css",
+    "static/js/main.b90d5852.js"
   ]
 }
