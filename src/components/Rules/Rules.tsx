@@ -23,9 +23,9 @@ export const Rules = () => {
           </li>
           {isHardModeOn && (
             <li>
-              {
-                "On hit, the time to hit the next one decreases by 5 percent, and if it misses, the time increases by 5 percent."
-              }
+              {"On hit, the time to hit the next one decreases by 5 percent,"}
+              <br />
+              {"and if it misses, the time increases by 5 percent."}
             </li>
           )}
           <li>{"Click until half of the squares on the field turn green"}</li>

@@ -4,10 +4,9 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import "./App.css";
 import { Home } from "./components/Home";
 import { RoutesPath } from "./constants/routesPath";
-import { GameField } from "./components/Game";
+import { GameField } from "./components/GameField";
 
 const App = () => {
   return (
