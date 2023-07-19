@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { NUMBERS, WIN } from '../../constants/constants'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks/hooks'
 import { gameResult, resultCount, setGameResult } from '../../redux/slices/gameFiledSlice'
+import "./Result.scss"
 
 export const Result = () => {
   const dispatch = useAppDispatch();
@@ -11,8 +12,8 @@ export const Result = () => {
 
   return (
     <div>
-      <div className="bg-blue-900 text-white font-bold rounded-lg border shadow-lg p-10 grid grid-rows-2 opacity-100">
-        <div className="flex justify-center text-3xl pb-1">{gameResults}</div>
+      <div className="result">
+        <div className="result-text">{gameResults}</div>
         <div>
           {gameResults === WIN
             ? `Red: ${resultCounts.red} Green: ${resultCounts.green + NUMBERS.ONE}`
@@ -23,7 +24,7 @@ export const Result = () => {
           onClick={() => {
             dispatch(setGameResult(null))
           }}
-          className="border rounded bg-teal-300 p-2 mt-3 hover:text-pink-500 text-center"
+          className="button"
         >
           {'Play again'}
         </Link>

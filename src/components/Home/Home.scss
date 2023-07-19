@@ -1,5 +1,3 @@
-// styles.scss
-
 .wrapper {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     height: 100vh;
@@ -13,7 +11,7 @@
   }
   
   .custom-box-wrapper {
-    max-width: 40rem;
+    max-width: 42rem;
     padding: 0 1.25rem;
     margin: auto;
     width: 100%;
