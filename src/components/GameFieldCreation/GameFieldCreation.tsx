@@ -8,8 +8,9 @@ import {
   setHardMode,
 } from "../../redux/slices/gameFiledSlice";
 import { NUMBERS, ROWS, COLS } from "../../constants/constants";
+import "./GameFieldCreation.scss"
 
-export const GameFiledCreation = () => {
+export const GameFieldCreation = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const isHardModeOn = useAppSelector(isHardMode);
@@ -45,10 +46,10 @@ export const GameFiledCreation = () => {
 
   return (
     <div>
-      <div className="grid gap-4">
-        <div className="col-span-2 md:col-span-1">
+      <div className="input-container">
+        <div className="custom-input">
           <input
-            className="inputClassName"
+            className="input"
             type="number"
             min={NUMBERS.TWO}
             max={NUMBERS.FIVE}
@@ -56,9 +57,9 @@ export const GameFiledCreation = () => {
             onChange={onChangeHorizontal}
           />
         </div>
-        <div className="col-span-2 md:col-span-1">
+        <div className="custom-input">
           <input
-            className="inputClassName"
+            className="input"
             type="number"
             min={NUMBERS.TWO}
             max={NUMBERS.FIVE}
@@ -69,30 +70,29 @@ export const GameFiledCreation = () => {
       </div>
       {error && (
         <div>
-          <div className="text-red-500 font-semibold flex justify-center text-lg pt-1">
+          <div className="error">
             {`The number of lines can be from ${NUMBERS.TWO} to ${NUMBERS.FIVE}.`}
           </div>
         </div>
       )}
-      <div className="mt-4 grid justify-items-center">
+      <div className="start-button">
         <button
           type="button"
-          className="border rounded bg-teal-300 py-1 px-2 hover:text-red-200"
           onClick={onClickStart}
         >
           {"Start"}
         </button>
       </div>
-      <div className="flex flex-col">
+      <div className="hard-mode-toggle">
         <label
           htmlFor="toggleHardMode"
-          className="mt-3 inline-flex items-center cursor-pointer"
+          className="label"
         >
-          <span className="relative">
-            <span className="nameToggle" />
+          <span className="toggle-span">
+            <span className="toggle-name" />
             <span
               className={
-                isHardModeOn ? "nameToggleChecked" : "nameToggleUnchecked"
+                isHardModeOn ? "toggle-checked" : "toggle-unchecked"
               }
             >
               <input
@@ -104,7 +104,7 @@ export const GameFiledCreation = () => {
               />
             </span>
           </span>
-          <span className="ml-3 text-sm">{"Hard mode"}</span>
+          <span className="toggle-text-hard">{"Hard mode"}</span>
         </label>
       </div>
     </div>

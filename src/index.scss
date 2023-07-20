@@ -27,7 +27,7 @@ code {
     @apply block w-10 h-6 bg-gray-400 rounded-full shadow-inner
   }
   .nameToggleUnchecked {
-    @apply absolute block w-4 h-4 mt-1 ml-1 bg-white rounded-full shadow inset-y-0 left-0 focus-within:outline-none transition-transform duration-300 ease-in-out
+    @apply absolute block w-4 h-4 mt-1 ml-1 rounded-full shadow inset-y-0 left-0 bg-white focus-within:outline-none transition-transform duration-300 ease-in-out
   }
   .nameToggleChecked {
     @apply absolute block w-4 h-4 mt-1 ml-1 rounded-full shadow inset-y-0 left-0 focus-within:outline-none transition-transform duration-300 ease-in-out bg-red-500 transform translate-x-full

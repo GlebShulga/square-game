@@ -1,19 +1,18 @@
 import { useAppSelector } from "../../redux/hooks/hooks";
 import { isHardMode } from "../../redux/slices/gameFiledSlice";
+import "./Rules.scss";
 
 export const Rules = () => {
   const isHardModeOn = useAppSelector(isHardMode);
 
   return (
     <div>
-      <div className="py-10 px-5 mt-10">
-        <ol className="list-decimal text-lg leading-loose text-black text-opacity-75">
-          <p className="text-3xl text-center pr-10 underline pb-2">
-            {"Game rules"}
-          </p>
+      <div className="rules">
+        <ol className="rules-list">
+          <p className="rules-title">{"Game rules"}</p>
           <li>{"Choose number of vertical and horizontal lines"}</li>
           <li>
-            {"Press"} <span className="font-semibold">{"Start"}</span>
+            {"Press"} <b>{"Start"}</b>
           </li>
           <li>{"Click on the square when it turns yellow"}</li>
           <li>
@@ -23,12 +22,12 @@ export const Rules = () => {
           </li>
           {isHardModeOn && (
             <li>
-              {"On hit, the time to hit the next one decreases by 5 percent,"}
-              <br />
-              {"and if it misses, the time increases by 5 percent."}
+              {
+                "On a successful hit, the time to hit the next square decreases by 5%, and if you miss, the time increases by 5%"
+              }
             </li>
           )}
-          <li>{"Click until half of the squares on the field turn green"}</li>
+          <li>{"Keep clicking until half of the squares on the field turn green"}</li>
           <li>{"You win!"}</li>
         </ol>
       </div>

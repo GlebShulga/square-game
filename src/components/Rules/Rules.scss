@@ -1,0 +1,19 @@
+.rules {
+  padding: 0 1.25rem 2.5rem 1.25rem;
+  margin-top: 2.5rem;
+
+  .rules-list {
+    list-style-type: decimal;
+    font-size: 1.125rem;
+    line-height: 2rem;
+    color: rgba(0, 0, 0, 0.75);
+
+    .rules-title {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+      text-align: center;
+      margin: 0 2.5rem 0.6rem 0;
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { GameFiledCreation } from "../GameFiledCreation/GameFiledCreation";
+import { GameFieldCreation } from "../GameFieldCreation/GameFieldCreation";
 import { Rules } from "../Rules";
 import "./Home.scss"
 
@@ -11,7 +11,7 @@ export const Home = () => {
         </div>
         <div className="custom-box-wrapper">
           <div className="custom-box">
-            <GameFiledCreation />
+            <GameFieldCreation />
           </div>
         </div>
       </div>
