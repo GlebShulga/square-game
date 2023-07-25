@@ -61,6 +61,15 @@
     .toggle-span {
       position: relative;
 
+      &:focus-within {
+        outline: none;
+        border-radius: 99px;
+        box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.7), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+        transition-property: transform, box-shadow;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+      }
+
       .toggle-name {
         display: block;
         width: 2.5rem;
@@ -93,16 +102,15 @@
 
       .toggle-checked {
         @include toggle-checkbox;
-        background-color: rgb(255 255 255);
-      }
-
-      .toggle-unchecked {
-        @include toggle-checkbox;
-
         &:focus-within {
           background-color: rgb(239 68 68);
           transform: translateX(100%);
         }
+      }
+
+      .toggle-unchecked {
+        @include toggle-checkbox;
+        background-color: rgb(255 255 255);
       }
 
       input[type="checkbox"] {

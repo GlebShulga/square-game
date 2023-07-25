@@ -1,3 +1,4 @@
+import { StrictMode } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -10,16 +11,18 @@ import { GameField } from "./components/GameField";
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path={RoutesPath.home} element={<Home />} />
-        <Route path={RoutesPath.game} element={<GameField />} />
-        <Route
-          path={RoutesPath.fallback}
-          element={<Navigate to={RoutesPath.home} />}
-        />
-      </Routes>
-    </Router>
+    <StrictMode>
+      <Router>
+        <Routes>
+          <Route path={RoutesPath.home} element={<Home />} />
+          <Route path={RoutesPath.game} element={<GameField />} />
+          <Route
+            path={RoutesPath.fallback}
+            element={<Navigate to={RoutesPath.home} />}
+          />
+        </Routes>
+      </Router>
+    </StrictMode>
   );
 };
 

@@ -16,10 +16,11 @@ import {
   gameResult,
 } from "../../redux/slices/gameFiledSlice";
 import { Result } from "../Result";
+import "./GameField.scss";
 
 export const GameField = () => {
   const dispatch = useAppDispatch();
-  const generatedSquare = useAppSelector(list);
+  const generatedGameField = useAppSelector(list);
   const rowsNumber = useAppSelector(rows);
   const colsNumber = useAppSelector(cols);
   const timer = useAppSelector(activeTimer);
@@ -27,33 +28,33 @@ export const GameField = () => {
   const gameResults = useAppSelector(gameResult);
 
   useEffect(() => {
-    dispatch(setRandomSquare());
+      dispatch(setRandomSquare());
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div>
-      <div className="mx-auto my-10 md:my-5 flex flex-wrap justify-center">
+      <div className="game-field">
         <div
           className={`grid grid-rows-${rowsNumber} grid-cols-${colsNumber} gap-4 md:gap-10`}
           id="game-field"
         >
-          {generatedSquare.map((it, index) => {
-            let color = "bg-gray-500";
+          {generatedGameField.map((it, index) => {
+            let color = "bg-gray";
             if (it === YELLOW_SQUARE) {
-              color = "bg-yellow-500";
+              color = "bg-yellow";
             }
             if (it === GREEN_SQUARE) {
-              color = "bg-green-500";
+              color = "bg-green";
             }
             if (it === RED_SQUARE) {
-              color = "bg-red-500";
+              color = "bg-red";
             }
             return (
               <button
                 type="button"
-                aria-label="Select square"
-                className={`md:w-20 md:h-20 w-10 h-10 ${color}`}
+                aria-label="select square button"
+                className={`generated-square ${color}`}
                 key={`square-${index}-${it}`}
                 onClick={() => dispatch(changeToGreen())}
                 disabled={chosenSquare !== index}
@@ -62,7 +63,7 @@ export const GameField = () => {
           })}
         </div>
         {gameResults && (
-          <div className="absolute w-screen h-screen bg-gray-700 opacity-80 top-0 left-0 flex items-center justify-center">
+          <div className="game-results">
             <Result />
           </div>
         )}

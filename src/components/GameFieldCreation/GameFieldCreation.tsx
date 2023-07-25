@@ -52,7 +52,7 @@ export const GameFieldCreation = () => {
             className="input"
             type="number"
             min={NUMBERS.TWO}
-            max={NUMBERS.FIVE}
+            max={NUMBERS.EIGHT}
             placeholder="Choose the number of rows"
             onChange={onChangeHorizontal}
           />
@@ -62,7 +62,7 @@ export const GameFieldCreation = () => {
             className="input"
             type="number"
             min={NUMBERS.TWO}
-            max={NUMBERS.FIVE}
+            max={NUMBERS.EIGHT}
             placeholder="Choose the number of columns"
             onChange={onChangeVertical}
           />
@@ -71,7 +71,7 @@ export const GameFieldCreation = () => {
       {error && (
         <div>
           <div className="error">
-            {`The number of lines can be from ${NUMBERS.TWO} to ${NUMBERS.FIVE}.`}
+            {`The number of lines can be from ${NUMBERS.TWO} to ${NUMBERS.EIGHT}.`}
           </div>
         </div>
       )}
@@ -98,7 +98,6 @@ export const GameFieldCreation = () => {
               <input
                 id="toggleHardMode"
                 type="checkbox"
-                className="absolute opacity-0 w-0 h-0"
                 onChange={() => dispatch(setHardMode(!isHardModeOn))}
                 checked={isHardModeOn}
               />

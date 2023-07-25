@@ -1,0 +1,75 @@
+.game-field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2.5rem auto;
+
+  @media (min-width: 768px) {
+    margin: 1.25rem auto;
+  }
+
+  #game-field {
+    // Default grid layout and gap values
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4;
+  
+    // Media query for larger screens
+    @media (min-width: 768px) {
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10;
+    }
+  
+    // Dynamic grid layout and gap values based on rowsNumber and colsNumber
+    @for $i from 2 through 8 {
+      @for $j from 2 through 8 {
+        &.grid-rows-#{$i}.grid-cols-#{$j} {
+          grid-template-rows: repeat(#{$i}, 1fr);
+          grid-template-columns: repeat(#{$j}, 1fr);
+        }
+      }
+    }
+  }
+
+  .generated-square {
+    &.bg-gray {
+      background-color: rgb(107 114 128);
+    }
+
+    &.bg-yellow {
+      background-color: rgb(234 179 8);
+    }
+
+    &.bg-green {
+      background-color: rgb(34 197 94);
+    }
+
+    &.bg-red {
+      background-color: rgb(239 68 68);
+    }
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    @media (min-height: 768px) {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}
+
+.game-results {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgb(55 65 81);
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

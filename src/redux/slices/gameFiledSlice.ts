@@ -107,8 +107,8 @@ export const generateAsync =
   (): ThunkAction<void, RootState, undefined, PayloadAction<number[]>> =>
   (dispatch, getState) => {
     const { rows, cols } = getState().gameField;
-    const multiply = new Array(rows * cols).fill(GRAY_SQUARE);
-    dispatch(generateGameField(multiply));
+    const fieldSize = new Array(rows * cols).fill(GRAY_SQUARE);
+    dispatch(generateGameField(fieldSize));
   };
 
 export const changeToRed =
