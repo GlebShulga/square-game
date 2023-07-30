@@ -2,18 +2,22 @@ import { useState, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/hooks";
 import {
+  cols,
   generateAsync,
   isHardMode,
+  rows,
   setGameField,
   setHardMode,
 } from "../../redux/slices/gameFiledSlice";
 import { NUMBERS, ROWS, COLS } from "../../constants/constants";
-import "./GameFieldCreation.scss"
+import "./GameFieldCreation.scss";
 
 export const GameFieldCreation = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const isHardModeOn = useAppSelector(isHardMode);
+  const rowsNumber = useAppSelector(rows);
+  const colsNumber = useAppSelector(cols);
 
   const [error, setError] = useState(false);
 
@@ -38,7 +42,9 @@ export const GameFieldCreation = () => {
   };
 
   const onClickStart = () => {
-    if (!error) {
+    if (rowsNumber <= NUMBERS.TWO || colsNumber <= NUMBERS.TWO) {
+      setError(true);
+    } else if (!error) {
       dispatch(generateAsync());
       navigate("/game");
     }
@@ -76,24 +82,16 @@ export const GameFieldCreation = () => {
         </div>
       )}
       <div className="start-button">
-        <button
-          type="button"
-          onClick={onClickStart}
-        >
+        <button type="button" onClick={onClickStart}>
           {"Start"}
         </button>
       </div>
       <div className="hard-mode-toggle">
-        <label
-          htmlFor="toggleHardMode"
-          className="label"
-        >
+        <label htmlFor="toggleHardMode" className="label">
           <span className="toggle-span">
             <span className="toggle-name" />
             <span
-              className={
-                isHardModeOn ? "toggle-checked" : "toggle-unchecked"
-              }
+              className={isHardModeOn ? "toggle-checked" : "toggle-unchecked"}
             >
               <input
                 id="toggleHardMode"

@@ -39,7 +39,7 @@ export const GameField = () => {
           className={`grid grid-rows-${rowsNumber} grid-cols-${colsNumber} gap-4 md:gap-10`}
           id="game-field"
         >
-          {generatedGameField.map((it, index) => {
+          {generatedGameField.map((it: number, index: number) => {
             let color = "bg-gray";
             if (it === YELLOW_SQUARE) {
               color = "bg-yellow";

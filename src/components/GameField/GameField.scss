@@ -9,18 +9,16 @@
   }
 
   #game-field {
-    // Default grid layout and gap values
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
     gap: 4;
-  
-    // Media query for larger screens
+
     @media (min-width: 768px) {
       grid-template-rows: repeat(3, 1fr);
       grid-template-columns: repeat(3, 1fr);
       gap: 10;
     }
-  
+
     // Dynamic grid layout and gap values based on rowsNumber and colsNumber
     @for $i from 2 through 8 {
       @for $j from 2 through 8 {

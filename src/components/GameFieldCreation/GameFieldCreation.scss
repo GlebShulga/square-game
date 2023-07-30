@@ -14,11 +14,12 @@
 .input {
   border: 2px solid rgb(156 163 175);
   padding: 0.75rem;
+  width: 90%;
 
   @media (min-width: 768px) {
     font-size: 1.25rem;
     line-height: 1.75rem;
-    width: 100%;
+    width: 95%;
     color: rgb(0 0 0);
   }
 }
@@ -28,9 +29,14 @@
   font-weight: 600;
   display: flex;
   justify-content: center;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   padding-top: 0.25rem;
+
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
 .start-button {
@@ -41,10 +47,10 @@
   button {
     border-radius: 0.25rem;
     background-color: rgba(129, 230, 217);
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 0.75rem;
 
     &:hover {
-      color: rgb(254 202 202);
+      background-color: rgb(254 202 202);
     }
   }
 }
@@ -64,7 +70,8 @@
       &:focus-within {
         outline: none;
         border-radius: 99px;
-        box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.7), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 0 4px rgba(66, 153, 225, 0.7),
+          0 1px 2px -1px rgba(0, 0, 0, 0.1);
         transition-property: transform, box-shadow;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 300ms;

@@ -1,33 +1,33 @@
 .wrapper {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    height: 100vh;
-  }
-  
-  .rules {
-    display: flex;
-    justify-items: center;
-    justify-content: center;
-    padding-left: 1.25rem;
-  }
-  
-  .custom-box-wrapper {
-    max-width: 42rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: 100vh;
+}
+
+.rules {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+
+.custom-box-wrapper {
+  max-width: 42rem;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: 768px) {
     padding: 0 1.25rem;
-    margin: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
   }
-  
-  
-  .custom-box {
-    background-color: rgb(226, 155, 253);
-    width: 66.6667%;
-    color: white;
-    font-weight: bold;
-    border-radius: 0.5rem;
-    border: 1px solid #000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 2.5rem;
-  }
-  
+}
+
+.custom-box {
+  background-color: rgb(226, 155, 253);
+  width: 66.6667%;
+  color: white;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  border: 1px solid #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 2.5rem;
+}
