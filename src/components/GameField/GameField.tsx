@@ -36,8 +36,9 @@ export const GameField = () => {
     <div>
       <div className="game-field">
         <div
-          className={`grid grid-rows-${rowsNumber} grid-cols-${colsNumber} gap-4 md:gap-10`}
+          className={`grid grid-rows-${rowsNumber} grid-cols-${colsNumber}`}
           id="game-field"
+          
         >
           {generatedGameField.map((it: number, index: number) => {
             let color = "bg-gray";

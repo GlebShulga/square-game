@@ -9,14 +9,15 @@
   }
 
   #game-field {
+    display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    gap: 4;
+    gap: 0.5rem;
 
     @media (min-width: 768px) {
       grid-template-rows: repeat(3, 1fr);
       grid-template-columns: repeat(3, 1fr);
-      gap: 10;
+      gap: 2.5rem;
     }
 
     // Dynamic grid layout and gap values based on rowsNumber and colsNumber
@@ -50,7 +51,7 @@
     width: 2.5rem;
     height: 2.5rem;
 
-    @media (min-height: 768px) {
+    @media (min-width: 768px) {
       width: 5rem;
       height: 5rem;
     }
