@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/square-game/static/css/main.30ab4b9e.css",
-    "main.js": "/square-game/static/js/main.7d768a5d.js",
+    "main.css": "/square-game/static/css/main.11a31f35.css",
+    "main.js": "/square-game/static/js/main.692b564f.js",
     "static/js/787.30070e74.chunk.js": "/square-game/static/js/787.30070e74.chunk.js",
     "static/media/bg.jpg": "/square-game/static/media/bg.ea4a5809de89c3962837.jpg",
     "index.html": "/square-game/index.html",
-    "main.30ab4b9e.css.map": "/square-game/static/css/main.30ab4b9e.css.map",
-    "main.7d768a5d.js.map": "/square-game/static/js/main.7d768a5d.js.map",
+    "main.11a31f35.css.map": "/square-game/static/css/main.11a31f35.css.map",
+    "main.692b564f.js.map": "/square-game/static/js/main.692b564f.js.map",
     "787.30070e74.chunk.js.map": "/square-game/static/js/787.30070e74.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.30ab4b9e.css",
-    "static/js/main.7d768a5d.js"
+    "static/css/main.11a31f35.css",
+    "static/js/main.692b564f.js"
   ]
 }
