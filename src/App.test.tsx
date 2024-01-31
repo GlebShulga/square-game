@@ -1,9 +1,9 @@
-import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { store } from './redux';
-import App from './App';
+import { render } from "@testing-library/react";
+import { Provider } from "react-redux";
+import { store } from "./redux";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders react app", () => {
   const { getByText } = render(
     <Provider store={store}>
       <App />

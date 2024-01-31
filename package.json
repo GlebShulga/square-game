@@ -1,11 +1,11 @@
 {
   "name": "square-game",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "homepage": "https://glebshulga.github.io/square-game/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
-    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/jest-dom": "^6.4.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
     "react": "^18.2.0",
@@ -42,10 +42,10 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "^27.5.2",
-    "@types/node": "^17.0.45",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^20.11.13",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
     "@types/react-router-dom": "^5.3.3"
   }
 }
